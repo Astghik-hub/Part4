@@ -5,15 +5,20 @@ public class Library {
 
     public Library() {
         books = new ArrayList<>();
-        books.add(new Book("Crime and Punishment"));
-        books.add(new Book("War and Peace"));
-        books.add(new Book("Moby Dick"));
-        books.add(new Book("The Alchemist"));
-        books.add(new Book("The Metamorphosis"));
+        books.add(new Book());
+        books.add(new Book());
+        books.add(new Book());
+        books.add(new Book());
+        books.add(new Book());
     }
 
     public Library(ArrayList<Book> books) {
         this.books = new ArrayList<>(books);
+    }
+
+    public ArrayList<Book>searchBook(String keyword){
+        ArrayList<Book> book= new ArrayList<>(book);
+        if (keyword == )
     }
 
     public Library(Library anotherLibrary) {
@@ -21,7 +26,11 @@ public class Library {
     }
 
     public boolean equals(Library anotherLibrary) {
-        return
+        return books == anotherLibrary.books;
+    }
+
+    public String toString() {
+        return books.toString();
     }
 
     public ArrayList<Book> getBooks() {
