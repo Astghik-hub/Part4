@@ -12,11 +12,11 @@ public class Library {
      */
     public Library() {
         books = new ArrayList<>();
-        books.add(new Book());
-        books.add(new Book());
-        books.add(new Book());
-        books.add(new Book());
-        books.add(new Book());
+        books.add(new Book("How to Speak Chinese", "Your Name", 9.99, "To be confirmed", "123-4-56-789012-3"));
+        books.add(new Book("Java Programming", "John Doe", 19.99, "Tech Publisher", "456-7-89-123456-7"));
+        books.add(new Book("Learn Python", "Jane Smith", 15.99, "Code World", "789-0-12-345678-9"));
+        books.add(new Book("C++ Essentials", "Albert Johnson", 25.99, "Pro Books", "123-4-56-789012-3"));
+        books.add(new Book("Web Development Basics", "Emily Davis", 12.99, "Web Co.", "456-7-89-123456-8"));
     }
 
     /**
@@ -28,10 +28,22 @@ public class Library {
         this.books = new ArrayList<>(books);
     }
 
+    /**
+     * Search method
+     * @param keyword a word
+     * @return all books with the keyword
+     */
     public ArrayList<Book> searchBook(String keyword) {
-        ArrayList<Book> book = new ArrayList<>(book);
-        if (keyword ==)
+        ArrayList<Book> result = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().toLowerCase().contains(keyword.toLowerCase()) ||
+                book.getAuthor().toLowerCase().contains(keyword.toLowerCase())) {
+                result.add(book);
+            }
+        }
+        return result;
     }
+
 
     /**
      * copy constructor
